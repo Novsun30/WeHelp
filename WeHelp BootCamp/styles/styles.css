@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #333;
+}
+body div.intro {
+  width: 100vw;
+  height: 100vh;
+  background-color: #333;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-animation: fadeout 2s 5.2s forwards;
+          animation: fadeout 2s 5.2s forwards;
+}
+body div.intro text {
+  font-size: 4rem;
+  stroke-dasharray: 650;
+  stroke-dashoffset: 650;
+  -webkit-animation: draw 5.5s;
+          animation: draw 5.5s;
+}
+body header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #e2dacb;
+  text-align: center;
+  padding: 2rem 0rem;
+}
+body nav.row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 2rem;
+  background: linear-gradient(45deg, #810cb9, #00c673);
+  flex-wrap: wrap;
+  box-shadow: 6px 4px 8px 3px rgb(111, 111, 111);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+body nav.row ul {
+  list-style: none;
+}
+body nav.row ul li {
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  border-radius: 7px;
+}
+body nav.row ul li a {
+  text-decoration: none;
+  color: #e2dacb;
+  -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+  border-radius: 7px;
+}
+body nav.row ul li:hover {
+  background-color: #333;
+  transition: 0.5s ease;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main div {
+  padding: 2rem;
+  width: 66.6%;
+  margin: 1rem 0rem;
+}
+body main div h2 {
+  font-size: 2.25rem;
+  color: #e2dacb;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem;
+}
+body main div p {
+  padding: 1.5rem 0rem;
+  font-size: 1.75rem;
+  color: #fff;
+  text-indent: 3.5rem;
+  line-height: 1.8;
+  letter-spacing: 2px;
+}
+body div.top {
+  position: fixed;
+  bottom: 2rem;
+  right: 0;
+}
+body div.top div.bg {
+  width: 183px;
+  height: 174px;
+  background-color: rgba(3, 0, 103, 0);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body div.top div.bg:hover {
+  background-color: rgba(3, 0, 103, 0.4);
+  transition: 0.5s ease;
+}
+
+@-webkit-keyframes draw {
+  75% {
+    stroke-dashoffset: 0;
+  }
+  95% {
+    stroke-dashoffset: 650;
+  }
+}
+
+@keyframes draw {
+  75% {
+    stroke-dashoffset: 0;
+  }
+  95% {
+    stroke-dashoffset: 650;
+  }
+}
+@-webkit-keyframes fadeout {
+  from {
+    opacity: 1;
+    z-index: 3;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+    z-index: 3;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@media screen and (min-width: 1663px) {
+  nav.column {
+    visibility: hidden;
+    position: absolute;
+    z-index: -2;
+  }
+}
+@media screen and (max-width: 1663px) {
+  body nav.column {
+    min-height: 100vh;
+    width: 100px;
+    background: linear-gradient(#00c673, #810cb9);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0rem 0.2rem;
+    box-shadow: 5px 1px 8px 3px rgb(111, 111, 111);
+  }
+  body nav.column ul {
+    list-style: none;
+  }
+  body nav.column ul li {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 7px;
+  }
+  body nav.column ul li a {
+    text-decoration: none;
+    color: #e2dacb;
+    -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+  }
+  body nav.column ul li:hover {
+    background-color: #333;
+    transition: 0.5s ease;
+  }
+  body nav.row {
+    visibility: hidden;
+    position: absolute;
+    z-index: -2;
+  }
+}
+@media screen and (max-width: 767px) {
+  body div.intro svg {
+    transform: translate(20%, -50%);
+  }
+  body div.intro svg text {
+    font-size: 2rem;
+    stroke-width: 0.75;
+  }
+  body div.intro svg text.t1 {
+    transform: translate(5%, 0%);
+  }
+  body nav.column {
+    visibility: hidden;
+    position: absolute;
+    z-index: -2;
+  }
+  body header h1 {
+    font-size: 2rem;
+  }
+  body main div {
+    width: 95%;
+  }
+  body main div h2 {
+    font-size: 1.75rem;
+    padding: 0 rem;
+  }
+  body main div p {
+    font-size: 1.25rem;
+    text-indent: 2.5rem;
+  }
+  body div.top {
+    visibility: hidden;
+    z-index: -2;
+  }
+}/*# sourceMappingURL=styles.css.map */

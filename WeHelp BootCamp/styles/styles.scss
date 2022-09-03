@@ -1,0 +1,220 @@
+$Hcolor: #e2dacb;
+$Pcolor: #fff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #333;
+  div.intro {
+    width: 100vw;
+    height: 100vh;
+    background-color: #333;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeout 2s 5.2s forwards;
+    text {
+      font-size: 4rem;
+      stroke-dasharray: 650;
+      stroke-dashoffset: 650;
+      animation: draw 5.5s;
+    }
+  }
+
+  header {
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: $Hcolor;
+      text-align: center;
+      padding: 2rem 0rem;
+    }
+  }
+  nav.row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 2rem;
+    background: linear-gradient(45deg, #810cb9, #00c673);
+    flex-wrap: wrap;
+    box-shadow: 6px 4px 8px 3px rgb(111, 111, 111);
+    position: sticky;
+    top: 0;
+    ul {
+      list-style: none;
+      li {
+        font-size: 2rem;
+        padding: 1rem 2rem;
+        font-weight: 500;
+        border-radius: 7px;
+        a {
+          text-decoration: none;
+          color: $Hcolor;
+          -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+          border-radius: 7px;
+        }
+        &:hover {
+          background-color: #333;
+          transition: 0.5s ease;
+        }
+      }
+    }
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div {
+      padding: 2rem;
+      width: 66.6%;
+      margin: 1rem 0rem;
+      h2 {
+        font-size: 2.25rem;
+        color: $Hcolor;
+        font-weight: 600;
+        text-align: center;
+        padding: 1rem;
+      }
+      p {
+        padding: 1.5rem 0rem;
+        font-size: 1.75rem;
+        color: $Pcolor;
+        text-indent: 3.5rem;
+        line-height: 1.8;
+        letter-spacing: 2px;
+      }
+    }
+  }
+  div.top {
+    position: fixed;
+    bottom: 2rem;
+    right: 0;
+    div.bg {
+      width: 183px;
+      height: 174px;
+      background-color: rgba(3, 0, 103, 0);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    div.bg:hover {
+      background-color: rgba(3, 0, 103, 0.4);
+      transition: 0.5s ease;
+    }
+  }
+}
+@keyframes draw {
+  75% {
+    stroke-dashoffset: 0;
+  }
+  95% {
+    stroke-dashoffset: 650;
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+    z-index: 3;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@media screen and (min-width: 1663px) {
+  nav.column {
+    visibility: hidden;
+    position: absolute;
+    z-index: -2;
+  }
+}
+
+@media screen and (max-width: 1663px) {
+  body {
+    nav.column {
+      min-height: 100vh;
+      width: 100px;
+      background: linear-gradient(#00c673, #810cb9);
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 0rem 0.2rem;
+      box-shadow: 5px 1px 8px 3px rgb(111, 111, 111);
+      ul {
+        list-style: none;
+        li {
+          font-size: 1.5rem;
+          font-weight: 500;
+          text-align: center;
+          border-radius: 7px;
+          a {
+            text-decoration: none;
+            color: $Hcolor;
+            -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+          }
+          &:hover {
+            background-color: #333;
+            transition: 0.5s ease;
+          }
+        }
+      }
+    }
+    nav.row {
+      visibility: hidden;
+      position: absolute;
+      z-index: -2;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  body {
+    div.intro {
+      svg {
+        transform: translate(20%, -50%);
+        text {
+          font-size: 2rem;
+          stroke-width: 0.75;
+        }
+        text.t1 {
+          transform: translate(5%, 0%);
+        }
+      }
+    }
+    nav.column {
+      visibility: hidden;
+      position: absolute;
+      z-index: -2;
+    }
+    header {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+    main {
+      div {
+        width: 95%;
+        h2 {
+          font-size: 1.75rem;
+          padding: 0 rem;
+        }
+        p {
+          font-size: 1.25rem;
+          text-indent: 2.5rem;
+        }
+      }
+    }
+    div.top {
+      visibility: hidden;
+      z-index: -2;
+    }
+  }
+}
